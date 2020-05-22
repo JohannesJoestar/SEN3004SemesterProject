@@ -18,7 +18,6 @@ public class PatientRepository implements IPatient {
     @PersistenceContext
     private EntityManager manager;
 
-    // Comitting
     //// Methods
     // Interface implementation
     @Override
