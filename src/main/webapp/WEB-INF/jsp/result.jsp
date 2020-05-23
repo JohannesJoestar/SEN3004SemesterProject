@@ -13,27 +13,27 @@
 	<table>
 		<tr>
 			<td>Turkish ID:</td>
-			<td>${sampleObject.ID}</td>
+			<td>${patient}.ID}</td>
 		</tr>
 		<tr>
 			<td>First Name:</td>
-			<td>${sampleObject.Name}</td>
+			<td>${patient.Name}</td>
 		</tr>
 		<tr>
 			<td>Surname:</td>
-			<td>${sampleObject.Surname}</td>
+			<td>${patient.Surname}</td>
 		</tr>
 		<tr>
 			<td>Date of Birth:</td>
-			<td><javatime:format value="${sampleObject.dateField}" pattern="dd/MM/yyyy"/></td>
+			<td><javatime:format value="${patient.dateField}" pattern="dd/MM/yyyy"/></td>
 		</tr>
 		<tr>
 			<td>Date of first symptom seen:</td>
-			<td><javatime:format value="${sampleObject.dateField}" pattern="dd/MM/yyyy"/></td>
+			<td><javatime:format value="${patient.dateField}" pattern="dd/MM/yyyy"/></td>
 		</tr>		
 		<tr>
 			<td>Primary symptom:</td>
-			<td>${sampleObject.dropDownMenu}</td>
+			<td>${patient.dropDownMenu}</td>
 		</tr>
 	</table>
 </body>
