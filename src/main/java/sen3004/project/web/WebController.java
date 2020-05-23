@@ -2,6 +2,7 @@ package sen3004.project.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -25,9 +26,10 @@ public class WebController {
         return MV;
     }
     @RequestMapping(value = "/send", method = RequestMethod.POST)
-	public ModelAndView processForm(Patient patient, BindingResult result) {
+	public ModelAndView processForm(@ModelAttribute Patient patient) {
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("patient", patient);
+        mv.addObject("patient", patient);
+        mv.setViewName("result");
 		return mv;
 	}
   
