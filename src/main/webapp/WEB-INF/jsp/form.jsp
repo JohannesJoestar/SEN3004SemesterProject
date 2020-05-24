@@ -53,8 +53,8 @@
 				<td><form:errors path="primarySymptom" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<spring:message code="submitButtonLabel" var="Submit" />
-				<td colspan="3"><input type="submit" value="Submit" /></td>
+				<spring:message code="submitButtonLabel" var="lblSubmit" />
+				<td colspan="3"><input type="submit" value="${lblSubmit}" /></td>
 			</tr>
 		</table>
 	</form:form>
