@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="javatime" uri="http://sargue.net/jsptags/time" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,29 +13,30 @@
 	<h2>Registry Result</h2>
 	<table>
 		<tr>
-			<td>Turkish ID:</td>
+			<td><spring:message code="TIDLabel" /></td>
 			<td>${patient.TID}</td>
 		</tr>
 		<tr>
-			<td>First Name:</td>
+			<td><spring:message code="nameLabel" /></td>
 			<td>${patient.name}</td>
 		</tr>
 		<tr>
-			<td>Surname:</td>
+			<td><spring:message code="surnameLabel" /></td>
 			<td>${patient.surname}</td>
 		</tr>
 		<tr>
-			<td>Date of Birth:</td>
+			<td><spring:message code="dateOfBirthLabel" /></td>
 			<td><javatime:format value="${patient.dateOfBirth}" pattern="dd-MM-yyyy"/></td>
 		</tr>
 		<tr>
-			<td>Date of first symptom seen:</td>
-			<td><javatime:format value="${patient.dateOfBirth}" pattern="dd-MM-yyyy"/></td>
+			<td><spring:message code="dateSymptomLabel" /></td>
+			<td><javatime:format value="${patient.dateOfFirstSymptoms}" pattern="dd-MM-yyyy"/></td>
 		</tr>		
 		<tr>
-			<td>Primary symptom:</td>
+			<td><spring:message code="primarySymptomLabel" /></td>
 			<td>${patient.primarySymptom}</td>
 		</tr>
 	</table>
+	<p><a href="form.html?language=tr">Türkçe</a> | <a href="form.html?language=en">English</a></p>
 </body>
 </html>

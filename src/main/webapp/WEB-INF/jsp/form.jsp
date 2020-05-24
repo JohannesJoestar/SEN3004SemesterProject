@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,33 +13,33 @@
 	<form:form method="post" action="/send" modelAttribute="patient">
 		<table>
 			<tr>
-				<td>Turkish ID:</td>
+				<td><spring:message code="TIDLabel" /></td>
 				<td><form:input path="TID" /></td>
 				<td><form:errors path="TID" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td>First name:</td>
+				<td><spring:message code="nameLabel" /></td>
 				<td><form:input path="name" /></td>
 				<td><form:errors path="name" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td>Surname:</td>
+				<td><spring:message code="surnameLabel" /></td>
 				<td><form:input path="surname" /></td>
 				<td><form:errors path="surname" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td>Date of birth:</td>
+				<td><spring:message code="dateOfBirthLabel" /></td>
 				<td><form:input path="dateOfBirth" /></td>
 				<td><form:errors path="dateOfBirth" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td>Date of first symptom seen:</td>
+				<td><spring:message code="dateSymptomLabel" /></td>
 				<td><form:input path="dateOfFirstSymptoms" /></td>
 				<td><form:errors path="dateOfFirstSymptoms" cssClass="error" /></td>
 			</tr>
 			<tr>
 			<tr>
-				<td>Primary symptom:</td>
+				<td><spring:message code="primarySymptomLabel" /></td>
 				<td><form:select path="primarySymptom">
 						<form:option value="" label="Select symptom" />
 						<form:option value="fever" label="Fever" />
@@ -52,9 +53,11 @@
 				<td><form:errors path="primarySymptom" cssClass="error" /></td>
 			</tr>
 			<tr>
+				<spring:message code="submitButtonLabel" var="Submit" />
 				<td colspan="3"><input type="submit" value="Submit" /></td>
 			</tr>
 		</table>
 	</form:form>
+	<p><a href="form.html?language=tr">Türkçe</a> | <a href="form.html?language=en">English</a></p>
 </body>
 </html>

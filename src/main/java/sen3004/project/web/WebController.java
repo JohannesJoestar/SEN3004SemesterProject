@@ -1,5 +1,6 @@
 package sen3004.project.web;
 
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,7 +13,6 @@ import sen3004.project.model.Patient;
 @Controller
 
 public class WebController {
-   
     //// Properties
     // References
 
