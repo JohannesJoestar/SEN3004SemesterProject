@@ -89,10 +89,5 @@ public class Patient {
         this.dateOfFirstSymptom = dateOfFirstSymptoms;
     }
 
-    public String getPrimarySymptom(){
-        return this.primarySymptom;
-    }
-    public void setPrimarySymptom(String primarySymptom){
-        this.primarySymptom = primarySymptom;
     }
 }
