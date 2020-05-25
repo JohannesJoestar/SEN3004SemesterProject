@@ -1,6 +1,8 @@
 package sen3004.project.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.*;
 import javax.validation.constraints.Past;
@@ -35,10 +37,13 @@ public class Patient {
     @Past
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     @Column(name = "date_symptom")
-    private LocalDate dateOfFirstSymptoms;
+    private LocalDate dateOfFirstSymptom;
 
-    @Column(name = "primary_symptom")
-    private String primarySymptom;
+    @OneToMany
+    @JoinTable(name = "patient_symptom",
+        joinColumns =  @JoinColumn(name = "pid"))
+    @OrderBy(value = "id")
+    private List<Symptom> symptoms = new ArrayList<Symptom>();
 
     //// Methods
     // Access modifiers
@@ -77,11 +82,11 @@ public class Patient {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public LocalDate getDateOfFirstSymptoms() {
-        return dateOfFirstSymptoms;
+    public LocalDate getDateOfFirstSymptom() {
+        return dateOfFirstSymptom;
     }
-    public void setDateOfFirstSymptoms(LocalDate dateOfFirstSymptoms) {
-        this.dateOfFirstSymptoms = dateOfFirstSymptoms;
+    public void setDateOfFirstSymptom(LocalDate dateOfFirstSymptoms) {
+        this.dateOfFirstSymptom = dateOfFirstSymptoms;
     }
 
     public String getPrimarySymptom(){
