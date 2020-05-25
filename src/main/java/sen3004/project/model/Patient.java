@@ -85,9 +85,7 @@ public class Patient {
     public LocalDate getDateOfFirstSymptom() {
         return dateOfFirstSymptom;
     }
-    public void setDateOfFirstSymptom(LocalDate dateOfFirstSymptoms) {
-        this.dateOfFirstSymptom = dateOfFirstSymptoms;
-    }
-
+    public void setDateOfFirstSymptom(LocalDate dateOfFirstSymptom) {
+        this.dateOfFirstSymptom = dateOfFirstSymptom;
     }
 }
