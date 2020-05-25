@@ -58,6 +58,6 @@
 			</tr>
 		</table>
 	</form:form>
-	<p><a href="form.html?language=tr">Türkçe</a> | <a href="form.html?language=en">English</a></p>
+	<p><a href="?language=tr">Türkçe</a> | <a href="language=en">English</a></p>
 </body>
 </html>
