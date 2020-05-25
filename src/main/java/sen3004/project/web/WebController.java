@@ -9,7 +9,6 @@ import org.springframework.web.servlet.ModelAndView;
 import sen3004.project.model.Patient;
 
 @Controller
-
 public class WebController {
     //// Properties
     // References
