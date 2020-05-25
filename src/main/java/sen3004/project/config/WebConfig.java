@@ -1,4 +1,4 @@
-package sen3004.config;
+package sen3004.project.config;
 
 import java.util.Locale;
 
@@ -17,7 +17,6 @@ public class WebConfig implements WebMvcConfigurer {
 	public LocaleResolver localeResolver() {
 		// AcceptHeaderLocaleResolver acceptHeaderLocaleResolver = new AcceptHeaderLocaleResolver();
 		SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
-		sessionLocaleResolver.setDefaultLocale(Locale.forLanguageTag("tr"));
 		return sessionLocaleResolver;
 	}
 
