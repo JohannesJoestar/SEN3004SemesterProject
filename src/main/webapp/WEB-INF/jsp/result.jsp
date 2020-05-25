@@ -37,6 +37,6 @@
 			<td>${patient.primarySymptom}</td>
 		</tr>
 	</table>
-	<p><a href="?language=tr">Türkçe</a> | <a href="?language=en">English</a></p>
+	<p><a href="form?language=tr">Türkçe</a> | <a href="form?language=en">English</a></p>
 </body>
 </html>
