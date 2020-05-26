@@ -34,8 +34,8 @@
 			</tr>
 			<tr>
 				<td><spring:message code="dateSymptomLabel" /></td>
-				<td><form:input path="dateOfFirstSymptoms" /></td>
-				<td><form:errors path="dateOfFirstSymptoms" cssClass="error" /></td>
+				<td><form:input path="dateOfFirstSymptom" /></td>
+				<td><form:errors path="dateOfFirstSymptom" cssClass="error" /></td>
 			</tr>
 			<tr>
 			<tr>
