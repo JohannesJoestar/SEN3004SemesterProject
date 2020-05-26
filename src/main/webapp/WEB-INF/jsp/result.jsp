@@ -37,8 +37,8 @@
 			<td>
 				<c:forEach items="${patient.symptoms}" var="symptom" varStatus="ID">
 				<c:choose>
-					<c:when test="${ID.last}"><spring:message code="${symptom.name}Label"/>.</c:when>
-					<c:otherwise><spring:message code="${symptom.name}Label"/>, </c:otherwise>
+					<c:when test="${ID.last}"><spring:message code="${symptom.name}"/>.</c:when>
+					<c:otherwise><spring:message code="${symptom.name}"/>, </c:otherwise>
 				</c:choose>
 			    </c:forEach>
 		    </td>			
