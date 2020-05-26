@@ -30,7 +30,7 @@
 		</tr>
 		<tr>
 			<td><spring:message code="dateSymptomLabel" /></td>
-			<td><javatime:format value="${patient.dateOfFirstSymptoms}" pattern="dd-MM-yyyy"/></td>
+			<td><javatime:format value="${patient.dateOfFirstSymptom}" pattern="dd-MM-yyyy"/></td>
 		</tr>		
 		<tr>
 			<td><spring:message code="primarySymptomLabel" /></td>
