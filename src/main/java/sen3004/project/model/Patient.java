@@ -20,38 +20,37 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long ID;
 
-    @NotEmpty
     @Column(name = "tid", unique = true)
     private long TID;
 
     @NotEmpty
-    @Size(min = 1, max = 255)
+    @Size(max = 100)
     @Column(name = "name")
     private String name;
 
     @NotEmpty
-    @Size(min = 1, max = 255)
+    @Size(max = 100)
     @Column(name = "surname")
     private String surname;
 
-    @NotEmpty
     @Past
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     @Column(name = "date_birth")
+    @NotNull
     private LocalDate dateOfBirth;
 
-    @NotEmpty
     @Past
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     @Column(name = "date_symptom")
+    @NotNull
     private LocalDate dateOfFirstSymptom;
 
-    @NotEmpty
     @OneToMany
     @JoinTable(name = "patient_symptom",
         joinColumns =  @JoinColumn(name = "pid"))
     @OrderBy(value = "id")
-    private List<Symptom> symptoms = new ArrayList<Symptom>();
+    @NotEmpty
+    private List<Symptom> symptoms;
 
     //// Methods
     // Access modifiers
