@@ -10,7 +10,7 @@ public class Symptom {
     // Attributes
     @Id
     private long ID;
-    private String key;
+    private String name;
 
     //// Methods
     // Access modifiers
@@ -21,11 +21,11 @@ public class Symptom {
         this.ID = ID;
     }
 
-    public String getKey() {
-        return key;
+    public String getName() {
+        return name;
     }
-    public void setKey(String key) {
-        this.key = key;
+    public void setName(String name) {
+        this.name = name;
     }
 
     

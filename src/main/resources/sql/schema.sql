@@ -9,7 +9,7 @@ CREATE TABLE patient(
 
 CREATE TABLE symptom(
     id IDENTITY PRIMARY KEY,
-    key VARCHAR(100) 
+    name VARCHAR(100) 
 );
 
 CREATE TABLE patient_symptom(

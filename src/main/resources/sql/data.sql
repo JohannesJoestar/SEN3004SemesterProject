@@ -19,13 +19,13 @@ VALUES (
     parsedatetime('18-05-2020', 'dd-MM-yyyy')
 );
 
-INSERT INTO symptom(id, key) VALUES (1, "fever");
-INSERT INTO symptom(id, key) VALUES (2, "dry_cough");
-INSERT INTO symptom(id, key) VALUES (3, "tiredness");
-INSERT INTO symptom(id, key) VALUES (4, "diarrhoea");
-INSERT INTO symptom(id, key) VALUES (5, "cant_breathe");
-INSERT INTO symptom(id, key) VALUES (6, "taste_sense_loss");
-INSERT INTO symptom(id, key) VALUES (7, "chest_pain");
+INSERT INTO symptom(id, name) VALUES (1, 'fever');
+INSERT INTO symptom(id, name) VALUES (2, 'dry_cough');
+INSERT INTO symptom(id, name) VALUES (3, 'tiredness');
+INSERT INTO symptom(id, name) VALUES (4, 'diarrhoea');
+INSERT INTO symptom(id, name) VALUES (5, 'cant_breathe');
+INSERT INTO symptom(id, name) VALUES (6, 'taste_sense_loss');
+INSERT INTO symptom(id, name) VALUES (7, 'chest_pain');
 
 INSERT INTO patient_symptom(pid, sid) VALUES (1, 4);
 INSERT INTO patient_symptom(pid, sid) VALUES (1, 7);
