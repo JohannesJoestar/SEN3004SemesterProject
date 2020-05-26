@@ -44,6 +44,11 @@ public class WebController {
 	public ModelAndView processForm(@Valid @ModelAttribute Patient patient, BindingResult result) {
 		ModelAndView MV = new ModelAndView();
         MV.addObject("patient", patient);
+
+        // Symptoms as model attribute
+        List<Symptom> allSymptoms = service.getAllSymptoms();
+        MV.addObject("allSymptoms", allSymptoms);
+
         TIDV.validate(patient, result);
         MV.setViewName(
             (result.hasErrors() ? "form" : "result")
