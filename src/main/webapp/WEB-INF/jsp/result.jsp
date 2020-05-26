@@ -34,7 +34,14 @@
 		</tr>		
 		<tr>
 			<td><spring:message code="primarySymptomLabel" /></td>
-			<td>${patient.primarySymptom}</td>
+			<td>
+				<c:forEach items="${patient.symptoms}" var="symptom" varStatus="ID">
+				<c:choose>
+					<c:when test="${ID.last}">${symptom.name}.</c:when>
+					<c:otherwise>${symptom.name}, </c:otherwise>
+				</c:choose>
+			    </c:forEach>
+		    </td>			
 		</tr>
 	</table>
 	<p><a href="form?language=tr">Türkçe</a> | <a href="form?language=en">English</a></p>

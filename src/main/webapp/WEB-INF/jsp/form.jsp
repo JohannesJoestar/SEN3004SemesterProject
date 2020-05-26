@@ -41,11 +41,11 @@
 			</tr>
 			<tr>
 			<tr>
-				<td>Symptoms:</td>
+				<td><spring:message code="symptomsLabel" /></td>
 				<td>
-					<!-- 'symptoms' here is a model attribute-->
+					<!-- 'symptoms' here is a model attribute-->					
 					<c:forEach items="${allSymptoms}" var="symptom">
-						<form:checkbox path="symptoms" label="${symptom.name}" value="${symptom.ID}" /><br /> 
+						<form:checkbox path="symptoms" value="${symptom.ID}" /><spring:message code="${symptom.name}Label"/><br />
 					</c:forEach>
 				</td>
 				<td><form:errors path="symptoms" cssClass="error" /></td>
