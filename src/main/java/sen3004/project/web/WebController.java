@@ -1,5 +1,6 @@
 package sen3004.project.web;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,11 +8,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import sen3004.project.model.Patient;
+import sen3004.project.service.WebService;
 
 @Controller
 public class WebController {
+
     //// Properties
     // References
+    @Autowired
+    WebService service;
 
     //// Methods
     // Request mappings
