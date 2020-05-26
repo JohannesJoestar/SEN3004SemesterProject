@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,18 +41,14 @@
 			</tr>
 			<tr>
 			<tr>
-				<td><spring:message code="primarySymptomLabel" /></td>
-				<td><form:select path="primarySymptom">
-						<form:option value="" label="Select symptom" />
-						<form:option value="fever" label="Fever" />
-						<form:option value="dry_cough" label="Dry cough" />
-						<form:option value="tiredness" label="Tiredness" />
-						<form:option value="diarrhoea" label="Diarrhoea" />
-						<form:option value="headache" label="Headache" />
-						<form:option value="difficulty_breathing" label="Difficulty breathing" />
-					</form:select>
+				<td>Symptoms:</td>
+				<td>
+					<!-- 'symptoms' here is a model attribute-->
+					<c:forEach items="${allSymptoms}" var="symptom">
+						<form:checkbox path="symptoms" label="${symptom.name}" value="${symptom.ID}" /><br /> 
+					</c:forEach>
 				</td>
-				<td><form:errors path="primarySymptom" cssClass="error" /></td>
+				<td><form:errors path="symptoms" cssClass="error" /></td>
 			</tr>
 			<tr>
 				<spring:message code="submitButtonLabel" var="lblSubmit" />

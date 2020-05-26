@@ -1,5 +1,7 @@
 package sen3004.project.web;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import sen3004.project.model.Patient;
+import sen3004.project.model.Symptom;
 import sen3004.project.service.WebService;
 
 @Controller
@@ -24,6 +27,10 @@ public class WebController {
     public ModelAndView displayForm(){
         ModelAndView MV = new ModelAndView("form");
         MV.addObject("patient", new Patient());
+
+        // Symptoms as model attribute
+        List<Symptom> allSymptoms = service.getAllSymptoms();
+        MV.addObject("allSymptoms", allSymptoms);
         
         return MV;
     }
