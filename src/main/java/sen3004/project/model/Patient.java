@@ -88,4 +88,11 @@ public class Patient {
     public void setDateOfFirstSymptom(LocalDate dateOfFirstSymptom) {
         this.dateOfFirstSymptom = dateOfFirstSymptom;
     }
+
+    public List<Symptom> getSymptoms(){
+        return symptoms;
+    }
+    public void setSymptoms(List<Symptom> symptoms){
+        this.symptoms = symptoms;
+    }
 }
