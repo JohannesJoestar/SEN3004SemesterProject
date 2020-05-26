@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.*;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -20,25 +20,33 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long ID;
 
+    @NotEmpty
     @Column(name = "tid", unique = true)
     private long TID;
 
+    @NotEmpty
+    @Size(min = 1, max = 255)
     @Column(name = "name")
     private String name;
 
+    @NotEmpty
+    @Size(min = 1, max = 255)
     @Column(name = "surname")
     private String surname;
 
+    @NotEmpty
     @Past
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     @Column(name = "date_birth")
     private LocalDate dateOfBirth;
 
+    @NotEmpty
     @Past
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     @Column(name = "date_symptom")
     private LocalDate dateOfFirstSymptom;
 
+    @NotEmpty
     @OneToMany
     @JoinTable(name = "patient_symptom",
         joinColumns =  @JoinColumn(name = "pid"))
