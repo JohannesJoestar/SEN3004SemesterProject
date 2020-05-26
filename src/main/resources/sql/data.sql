@@ -1,5 +1,5 @@
 INSERT INTO 
-patient(id, tid, name, surname, date_birth, date_symptom, primary_symptom) 
+patient(id, tid, name, surname, date_birth, date_symptom) 
 VALUES (
     1,
     97205969546, 
@@ -9,7 +9,7 @@ VALUES (
     parsedatetime('18-05-2020', 'dd-MM-yyyy')
 );
 INSERT INTO 
-patient(id, tid, name, surname, date_birth, date_symptom, primary_symptom) 
+patient(id, tid, name, surname, date_birth, date_symptom) 
 VALUES (
     2,
     55446292052, 
