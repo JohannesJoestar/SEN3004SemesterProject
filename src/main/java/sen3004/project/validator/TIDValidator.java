@@ -20,26 +20,26 @@ public class TIDValidator implements Validator {
         long TID = ((Patient) target).getTID();
 
         // TID is a 11 digit number
-        if (Math.log10(TID) == 10){
+        if ((int) Math.log10(TID) == 10){
             int[] digits = getDigitsOfLong(TID);
 
             // First 10 digits of TID gives 11th digit of TID
             int sumOfFirstTen = digits[0] + digits[1] + digits[2] + digits[3] +
                                 digits[4] + digits[5] + digits[6] + digits[7] +
                                 digits[8] + digits[9];
-            if (firstDigitOf(sumOfFirstTen) == digits[10]){
-                
+            if (lastDigitOf(sumOfFirstTen) == digits[10]){
+
                 // 10th digit must be the first digit of
                 // Sum of 7 times the sum of digits 1, 3, 5, 7 and 9 and
                 // 9 times the sum of digits 2, 4, 6 and 8
                 int sumOfOdds = digits[0] + digits[2] + digits[4] + digits[6] + digits[8];
                 int sumOfEvens = digits[1] + digits[3] + digits[5] + digits[7];
-                if (firstDigitOf((7 * sumOfOdds) + (9 * sumOfEvens)) == digits[9]){
+                if (lastDigitOf((7 * sumOfOdds) + (9 * sumOfEvens)) == digits[9]){
 
                     // Finally, first digit of 
                     // 8 times the sum of digits 1, 3, 5, 7 and 9 
                     // must give the 11th digit
-                    if (firstDigitOf(8 * sumOfOdds) == digits[10]) return;
+                    if (lastDigitOf(8 * sumOfOdds) == digits[10]) return;
                 }
             }
         }
@@ -56,10 +56,10 @@ public class TIDValidator implements Validator {
         }
         return digits;
     }
-    private int firstDigitOf(int number){
-        return Character.valueOf(
-            String.valueOf(number).charAt(0)
-        );
+    private int lastDigitOf(int number){
+        String parsed = String.valueOf(number);
+        char last = parsed.charAt(parsed.length() - 1);
+        return Character.getNumericValue(last);
     }
 
 }
