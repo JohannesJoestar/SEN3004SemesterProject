@@ -15,6 +15,21 @@ public class Symptom {
     private String name;
 
     //// Methods
+    // Object implementation
+    @Override
+    public boolean equals(Object target){
+
+        // Overriding equals allows the checkbox values to be objects themselves instead of their ID
+        if (target == null){
+            return false;
+        } else {
+            if (target instanceof Symptom){
+                return (ID == ((Symptom) target).getID());
+            } else {
+                return false;
+            }
+        }
+    }
     // Access modifiers
     public long getID() {
         return ID;

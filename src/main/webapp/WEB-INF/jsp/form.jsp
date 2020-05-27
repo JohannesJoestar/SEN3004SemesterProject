@@ -44,7 +44,7 @@
 				<td><spring:message code="symptomsLabel" /></td>
 				<td>				
 					<c:forEach items="${allSymptoms}" var="symptom">
-						<form:checkbox path="symptoms" value="${symptom.ID}" />
+						<form:checkbox path="symptoms" value="${symptom}" />
 						<spring:message code="${symptom.name}"/>
 						<br/>
 					</c:forEach>
