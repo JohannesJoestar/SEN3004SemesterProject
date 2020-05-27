@@ -10,7 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
@@ -56,9 +56,11 @@ public class Patient {
     @NotNull
     private LocalDate dateOfFirstSymptom;
 
-    @OneToMany
-    @JoinTable(name = "patient_symptom",
-        joinColumns =  @JoinColumn(name = "pid"))
+    @ManyToMany
+    @JoinTable(
+        name = "patient_symptom",
+        joinColumns =  @JoinColumn(name = "pid"),
+        inverseJoinColumns = @JoinColumn(name = "sid"))
     @OrderBy(value = "id")
     @NotEmpty
     private List<Symptom> symptoms;
