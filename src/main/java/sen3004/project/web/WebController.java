@@ -1,19 +1,17 @@
 package sen3004.project.web;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import sen3004.project.model.Patient;
-import sen3004.project.model.Symptom;
 import sen3004.project.service.WebService;
 import sen3004.project.validator.TIDValidator;
 
@@ -28,33 +26,20 @@ public class WebController {
     TIDValidator TIDV;
 
     //// Methods
-    // Request mappings
+    // Request mappings: general
     @RequestMapping(value = {"/form", "form.html"}, method = RequestMethod.GET)
     public ModelAndView displayForm(){
-        ModelAndView MV = new ModelAndView("form");
-        MV.addObject("patient", new Patient());
-
-        // Symptoms as model attribute
-        List<Symptom> allSymptoms = service.getAllSymptoms();
-        MV.addObject("allSymptoms", allSymptoms);
-        
-        return MV;
+        return new ModelAndView("form")
+            .addObject("patient", new Patient())
+            .addObject("allSymptoms", service.getAllSymptoms());
     }
     @RequestMapping(value = "/send", method = RequestMethod.POST)
 	public ModelAndView processForm(@Valid @ModelAttribute Patient patient, BindingResult result) {
-		ModelAndView MV = new ModelAndView();
-        MV.addObject("patient", patient);
-
-        // Symptoms as model attribute
-        List<Symptom> allSymptoms = service.getAllSymptoms();
-        MV.addObject("allSymptoms", allSymptoms);
-
         TIDV.validate(patient, result);
-        MV.setViewName(
-            (result.hasErrors() ? "form" : "result")
-        );
-		return MV;
-	}
+        return new ModelAndView(result.hasErrors() ? "form" : "result")
+            .addObject("patient", patient)
+            .addObject("allSymptoms", service.getAllSymptoms());
+    }
   
   
 }
