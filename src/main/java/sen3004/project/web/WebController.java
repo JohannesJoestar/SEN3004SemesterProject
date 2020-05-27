@@ -1,7 +1,5 @@
 package sen3004.project.web;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import sen3004.project.model.Patient;
-import sen3004.project.model.Symptom;
 import sen3004.project.service.WebService;
 import sen3004.project.validator.TIDValidator;
 
