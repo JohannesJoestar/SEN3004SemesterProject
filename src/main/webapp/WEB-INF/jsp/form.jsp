@@ -41,8 +41,7 @@
 			</tr>
 			<tr>
 				<td><spring:message code="symptomsLabel" /></td>
-				<td>
-					<!-- 'symptoms' here is a model attribute-->					
+				<td>				
 					<c:forEach items="${allSymptoms}" var="symptom">
 						<form:checkbox path="symptoms" value="${symptom.ID}" /><spring:message code="${symptom.name}"/><br />
 					</c:forEach>
