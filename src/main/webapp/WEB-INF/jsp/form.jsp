@@ -12,7 +12,7 @@
 </head>
 <body>
 	<h2>COVID-19 Patient Registry</h2>
-	<form:form method="post" action="/send" modelAttribute="patient">
+	<form:form method="post" action="/patient/view" modelAttribute="patient">
 		<table>
 			<tr>
 				<td><spring:message code="TIDLabel" /></td>
@@ -43,7 +43,9 @@
 				<td><spring:message code="symptomsLabel" /></td>
 				<td>				
 					<c:forEach items="${allSymptoms}" var="symptom">
-						<form:checkbox path="symptoms" value="${symptom.ID}" /><spring:message code="${symptom.name}"/><br />
+						<form:checkbox path="symptoms" value="${symptom.ID}" />
+						<spring:message code="${symptom.name}"/>
+						<br/>
 					</c:forEach>
 				</td>
 				<td><form:errors path="symptoms" cssClass="error" /></td>
