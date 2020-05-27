@@ -46,6 +46,7 @@
 		    </td>			
 		</tr>
 	</table>
-	<p><a href="form?language=tr">Türkçe</a> | <a href="form?language=en">English</a></p>
+	<p><a href="form.html"><spring:message code="sendNewValues" /></a></p>
+	<p><a href="form?language=tr"></span>Türkçe</a> | <a href="form?language=en">English</a></p>
 </body>
 </html>
