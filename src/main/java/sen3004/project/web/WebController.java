@@ -27,7 +27,7 @@ public class WebController {
 
     //// Methods
     // Request mappings: general
-    @RequestMapping(value = {"/form", "form.html"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/patient/register", method = RequestMethod.GET)
     public ModelAndView displayForm(){
         return new ModelAndView("form")
             .addObject("patient", new Patient())
