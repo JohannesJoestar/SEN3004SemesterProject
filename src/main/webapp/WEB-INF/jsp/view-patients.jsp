@@ -14,7 +14,7 @@
 	<h2>List of patients</h2>
 	<c:choose>
 		<c:when test="${fn:length(patients) > 0}">	
-			<table class="box" border="1">
+			<table class="bordered" border="1">
 				<tr>
                     <th>ID</th>
                     <th>TID</th>

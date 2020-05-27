@@ -11,9 +11,13 @@ h1, h2, h3, h4, h5, h6{
 
 table, td{
 	border-collapse: collapse;
-	border: 1px solid #000000;
+	border: 0px solid #000000;
 	padding: 5px;
 	font-size: 18px;
+}
+
+table.bordered, table.bordered td{
+	border: 1px solid #000000
 }
 
 th{

@@ -40,7 +40,6 @@
 				<td><form:errors path="dateOfFirstSymptom" cssClass="error" /></td>
 			</tr>
 			<tr>
-			<tr>
 				<td><spring:message code="symptomsLabel" /></td>
 				<td>
 					<!-- 'symptoms' here is a model attribute-->					
