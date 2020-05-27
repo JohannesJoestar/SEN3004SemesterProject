@@ -13,6 +13,7 @@
 <body>
 	<h2>COVID-19 Patient Registry</h2>
 	<form:form method="post" action="/patient/view" modelAttribute="patient">
+		<form:hidden path="ID" />
 		<table>
 			<tr>
 				<td><spring:message code="TIDLabel" /></td>
