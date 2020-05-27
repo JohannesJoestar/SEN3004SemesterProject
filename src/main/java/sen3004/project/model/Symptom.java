@@ -10,6 +10,8 @@ public class Symptom {
     // Attributes
     @Id
     private long ID;
+    
+    @Column(name = "name")
     private String name;
 
     //// Methods
