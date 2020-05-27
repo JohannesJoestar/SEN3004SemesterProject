@@ -29,7 +29,7 @@ public class WebController {
     // Request mappings: general
     @RequestMapping(value = "/patient/register", method = RequestMethod.GET)
     public ModelAndView displayForm(){
-        return new ModelAndView("form")
+        return new ModelAndView("register-patient")
             .addObject("patient", new Patient())
             .addObject("allSymptoms", service.getAllSymptoms());
     }
@@ -40,7 +40,7 @@ public class WebController {
         // Validation
         TIDV.validate(patient, result);
         if (result.hasErrors()){
-            MV.setViewName("form");
+            MV.setViewName("register-patient");
         } else {
             service.savePatient(patient);
             MV.setViewName("view-patient");
@@ -63,7 +63,7 @@ public class WebController {
     }
     @RequestMapping(value = "/patient/{PID}/edit", method = RequestMethod.GET)
     public ModelAndView editPatient(@PathVariable long PID){
-        return new ModelAndView("form")
+        return new ModelAndView("register-patient")
             .addObject("patient", service.getPatientByID(PID))
             .addObject("allSymptoms", service.getAllSymptoms());
     }
