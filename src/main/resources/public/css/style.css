@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6{
 
 table, td{
 	border-collapse: collapse;
-	border: 0px solid #000000;
+	border: 1px solid #000000;
 	padding: 5px;
 	font-size: 18px;
 }
@@ -20,10 +20,6 @@ th{
 	background-color: #4c9599;
 	color: #ffffff;
 	padding: 7px;
-}
-
-.bordered td{
-	border: 1px solid #000000;
 }
 
 input, select, option {

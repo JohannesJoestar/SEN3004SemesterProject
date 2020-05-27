@@ -40,6 +40,17 @@ public class WebController {
             .addObject("patient", patient)
             .addObject("allSymptoms", service.getAllSymptoms());
     }
+    // Request mappings: patient
+    @RequestMapping(value = "/patient/all", method = RequestMethod.GET)
+    public ModelAndView viewPatients(){
+        return new ModelAndView("view-patients")
+            .addObject("patients", service.getAllPatients());
+    }
+    @RequestMapping(value = "/patient/{PID}/delete", method = RequestMethod.GET)
+    public ModelAndView deletePatient(@PathVariable long PID){
+        service.deletePatientByID(PID);
+        return viewPatients();
+    }
   
   
 }
