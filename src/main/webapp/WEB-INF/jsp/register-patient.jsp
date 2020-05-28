@@ -9,7 +9,7 @@
 <link href="/css/style.css" rel="stylesheet" type="text/css" />
 <meta charset="UTF-8">
 
-<!-- Differentiate between regsitering and editing -->
+<!-- Differentiate between registering and editing -->
 <c:set var="registering" value="${patient.name == null}"/>
 
 <title>
