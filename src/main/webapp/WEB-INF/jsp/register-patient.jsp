@@ -8,7 +8,7 @@
 <head>
 <link href="/css/style.css" rel="stylesheet" type="text/css" />
 <meta charset="UTF-8">
-<title>COVID-19 Patient registry</title>
+<title><spring:message code="covidPatientRegistryLabel" /></title>
 </head>
 <body>
 	<h2>
@@ -16,7 +16,7 @@
 		<!-- Differentiate between regsitering and editing -->
 		<c:choose>
 			<c:when test="${patient.name == null}">
-				COVID-19 Patient registry
+				<spring:message code="covidPatientRegistryLabel" />
 			</c:when>
 			<c:otherwise>
 				Editing patient
@@ -68,14 +68,14 @@
 					<input type="submit" value="${lblSubmit}" />
 					<c:choose>
 						<c:when test="${patient.name != null}">
-							<a href="/patient/all">Cancel</a>
+							<a href="/patient/all"><spring:message code="cancelLabel" /></a>
 						</c:when>
 					</c:choose>
 				</td>
 			</tr>
 		</table>
-	</form:form>	
-	<p>View all registered patients <a href="/patient/all">here</a>.</p>
+	</form:form>
+	<p><spring:message code="registerLabel"/><a href="/patient/all"><spring:message code="hereLabel"/></a> .</p>
 	<p>
 		<spring:message code="linklabel" var="labelLink" /><spring:message code="linklabel2" var="labelLink2" /><a href="${labelLink2}"><img src="${labelLink}" height="22" ></a>
 	</p>
