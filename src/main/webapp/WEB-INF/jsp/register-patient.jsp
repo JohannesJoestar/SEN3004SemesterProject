@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 
 <!-- Differentiate between registering and editing -->
-<c:set var="registering" value="${patient.name == null}"/>
+<c:set var="registering" value="${patient.ID == 0}"/>
 
 <title>
 	<c:choose>
