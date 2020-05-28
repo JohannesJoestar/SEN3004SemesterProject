@@ -48,8 +48,8 @@
 							</c:choose>
 						</td>
 						<td>
-							<a href="/patient/${p.ID}/delete/"><img src="/img/delete.png" width="20" /></a>
-							<a href="/patient/${p.ID}/edit/"><img src="/img/edit.png" width="20" /></a>
+							<a title="Delete" href="/patient/${p.ID}/delete/"><img src="/img/delete.png" width="20" /></a>
+							<a title="Edit" href="/patient/${p.ID}/edit/"><img src="/img/edit.png" width="20" /></a>
 						</td>
 					</tr>
 				</c:forEach>
