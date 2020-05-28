@@ -56,6 +56,8 @@
 			</tr>
 		</table>
 	</form:form>
-	<p><a href="form?language=tr"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" height="22" ></a> | <a href="form?language=en"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1280px-Flag_of_the_United_Kingdom.svg.png" height="20" ></a></p>
+	<p>
+		<spring:message code="linklabel" var="labelLink" /><spring:message code="linklabel2" var="labelLink2" /><a href="${labelLink2}"><img src="${labelLink}" height="22" ></a>
+	</p>
 </body>
 </html>
