@@ -59,6 +59,6 @@
 			<p>There are no patients registered.</p>
 		</c:otherwise>
 	</c:choose>
-	<p>Register a new patient <a href="/create.html">here</a>.</p>
+	<p>Register a new patient <a href="/patient/register">here</a>.</p>
 </body>
 </html>
