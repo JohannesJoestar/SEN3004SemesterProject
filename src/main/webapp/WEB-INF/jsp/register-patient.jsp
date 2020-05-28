@@ -8,10 +8,21 @@
 <head>
 <link href="/css/style.css" rel="stylesheet" type="text/css" />
 <meta charset="UTF-8">
-<title>COVID-19 Patient Registry</title>
+<title>COVID-19 Patient registry</title>
 </head>
 <body>
-	<h2>COVID-19 Patient Registry</h2>
+	<h2>
+		
+		<!-- Differentiate between regsitering and editing -->
+		<c:choose>
+			<c:when test="${patient.name == null}">
+				COVID-19 Patient registry
+			</c:when>
+			<c:otherwise>
+				Editing patient
+			</c:otherwise>
+		</c:choose>
+	</h2>
 	<form:form method="post" action="/patient/view" modelAttribute="patient">
 		<form:hidden path="ID" />
 		<table>
@@ -53,7 +64,14 @@
 			</tr>
 			<tr>
 				<spring:message code="submitButtonLabel" var="lblSubmit" />
-				<td colspan="3"><input type="submit" value="${lblSubmit}" /></td>
+				<td>
+					<input type="submit" value="${lblSubmit}" />
+					<c:choose>
+						<c:when test="${patient.name != null}">
+							<a href="/patient/all">Cancel</a>
+						</c:when>
+					</c:choose>
+				</td>
 			</tr>
 		</table>
 	</form:form>
