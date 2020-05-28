@@ -8,11 +8,23 @@
 <head>
 <link href="/css/style.css" rel="stylesheet" type="text/css" />
 <meta charset="UTF-8">
-<title>COVID-19 Patient Registry</title>
+<title>COVID-19 Patient registry</title>
 </head>
 <body>
-	<h2>COVID-19 Patient Registry</h2>
-	<form:form method="post" action="/send" modelAttribute="patient">
+	<h2>
+		
+		<!-- Differentiate between regsitering and editing -->
+		<c:choose>
+			<c:when test="${patient.name == null}">
+				COVID-19 Patient registry
+			</c:when>
+			<c:otherwise>
+				Editing patient
+			</c:otherwise>
+		</c:choose>
+	</h2>
+	<form:form method="post" action="/patient/view" modelAttribute="patient">
+		<form:hidden path="ID" />
 		<table>
 			<tr>
 				<td><spring:message code="TIDLabel" /></td>
@@ -40,22 +52,30 @@
 				<td><form:errors path="dateOfFirstSymptom" cssClass="error" /></td>
 			</tr>
 			<tr>
-			<tr>
 				<td><spring:message code="symptomsLabel" /></td>
-				<td>
-					<!-- 'symptoms' here is a model attribute-->					
+				<td>				
 					<c:forEach items="${allSymptoms}" var="symptom">
-						<form:checkbox path="symptoms" value="${symptom.ID}" /><spring:message code="${symptom.name}"/><br />
+						<form:checkbox path="symptoms" value="${symptom}" />
+						<spring:message code="${symptom.name}"/>
+						<br/>
 					</c:forEach>
 				</td>
 				<td><form:errors path="symptoms" cssClass="error" /></td>
 			</tr>
 			<tr>
 				<spring:message code="submitButtonLabel" var="lblSubmit" />
-				<td colspan="3"><input type="submit" value="${lblSubmit}" /></td>
+				<td>
+					<input type="submit" value="${lblSubmit}" />
+					<c:choose>
+						<c:when test="${patient.name != null}">
+							<a href="/patient/all">Cancel</a>
+						</c:when>
+					</c:choose>
+				</td>
 			</tr>
 		</table>
-	</form:form>
+	</form:form>	
+	<p>View all registered patients <a href="/patient/all">here</a>.</p>
 	<p>
 		<spring:message code="linklabel" var="labelLink" /><spring:message code="linklabel2" var="labelLink2" /><a href="${labelLink2}"><img src="${labelLink}" height="22" ></a>
 	</p>

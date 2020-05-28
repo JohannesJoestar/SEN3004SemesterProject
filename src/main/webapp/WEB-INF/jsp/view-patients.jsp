@@ -14,7 +14,7 @@
 	<h2>List of patients</h2>
 	<c:choose>
 		<c:when test="${fn:length(patients) > 0}">	
-			<table class="box" border="1">
+			<table class="bordered" border="1">
 				<tr>
                     <th>ID</th>
                     <th>TID</th>
@@ -47,7 +47,10 @@
 								</c:when>
 							</c:choose>
 						</td>
-						<td><a href="/patient/${p.ID}/delete/"><img src="/img/delete.png" width="20" /></a></td>
+						<td>
+							<a title="Delete" href="/patient/${p.ID}/delete/"><img src="/img/delete.png" width="20" /></a>
+							<a title="Edit" href="/patient/${p.ID}/edit/"><img src="/img/edit.png" width="20" /></a>
+						</td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -56,6 +59,6 @@
 			<p>There are no patients registered.</p>
 		</c:otherwise>
 	</c:choose>
-	<p>Register a new patient <a href="/create.html">here</a>.</p>
+	<p>Register a new patient <a href="/patient/register">here</a>.</p>
 </body>
 </html>

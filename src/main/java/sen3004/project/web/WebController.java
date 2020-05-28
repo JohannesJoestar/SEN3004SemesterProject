@@ -27,16 +27,26 @@ public class WebController {
 
     //// Methods
     // Request mappings: general
-    @RequestMapping(value = {"/form", "form.html"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/patient/register", method = RequestMethod.GET)
     public ModelAndView displayForm(){
-        return new ModelAndView("form")
+        return new ModelAndView("register-patient")
             .addObject("patient", new Patient())
             .addObject("allSymptoms", service.getAllSymptoms());
     }
-    @RequestMapping(value = "/send", method = RequestMethod.POST)
+    @RequestMapping(value = "/patient/view", method = RequestMethod.POST)
 	public ModelAndView processForm(@Valid @ModelAttribute Patient patient, BindingResult result) {
+        ModelAndView MV = new ModelAndView();
+
+        // Validation
         TIDV.validate(patient, result);
-        return new ModelAndView(result.hasErrors() ? "form" : "result")
+        if (result.hasErrors()){
+            MV.setViewName("register-patient");
+        } else {
+            service.savePatient(patient);
+            MV.setViewName("view-patient");
+        }
+        
+        return MV
             .addObject("patient", patient)
             .addObject("allSymptoms", service.getAllSymptoms());
     }
@@ -50,6 +60,12 @@ public class WebController {
     public ModelAndView deletePatient(@PathVariable long PID){
         service.deletePatientByID(PID);
         return viewPatients();
+    }
+    @RequestMapping(value = "/patient/{PID}/edit", method = RequestMethod.GET)
+    public ModelAndView editPatient(@PathVariable long PID){
+        return new ModelAndView("register-patient")
+            .addObject("patient", service.getPatientByID(PID))
+            .addObject("allSymptoms", service.getAllSymptoms());
     }
   
   
