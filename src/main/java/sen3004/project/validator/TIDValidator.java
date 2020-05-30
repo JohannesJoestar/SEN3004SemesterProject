@@ -5,9 +5,20 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import sen3004.project.model.Patient;
+import sen3004.project.service.WebService;
 
 @Component
 public class TIDValidator implements Validator {
+
+    //// Properties
+    // References
+    private WebService service;
+
+    //// Constructors
+    // Parametric
+    public TIDValidator(WebService service){
+        this.service = service;
+    }
 
     //// Methods
     // Validator implementation
@@ -18,6 +29,11 @@ public class TIDValidator implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         long TID = ((Patient) target).getTID();
+        
+        // TID has a unique constraint
+        if (service.patientExistsByTID(TID)){
+            errors.rejectValue("TID", "TID.custom.exists");
+        }
 
         // TID is a 11 digit number
         if ((int) Math.log10(TID) == 10){

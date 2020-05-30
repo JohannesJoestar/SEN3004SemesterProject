@@ -5,6 +5,9 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -41,6 +44,22 @@ public class WebService {
     }
     public void deletePatientByID(long ID){
         repoPatient.deleteById(ID);
+    }
+    public boolean patientExistsByTID(long TID){
+
+        // We needed a way to handle the JdbcSQLIntegrityConstraintViolationException
+        // We decided to use a custom query for it
+        ExampleMatcher matcher = ExampleMatcher.matching()
+            .withIgnorePaths("ID")
+            .withMatcher("TID", GenericPropertyMatchers.exact());
+
+        // Example
+        Patient probe = new Patient();
+        probe.setTID(TID);
+
+        Example<Patient> example = Example.of(probe, matcher);
+
+        return repoPatient.exists(example);
     }
     // Service implementation: Symptom
     public List<Symptom> getAllSymptoms(){
