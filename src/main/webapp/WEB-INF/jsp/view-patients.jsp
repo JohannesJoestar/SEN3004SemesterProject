@@ -59,7 +59,7 @@
 			</table>
 		</c:when>
 		<c:otherwise>
-			<p>There are no patients registered.</p>
+			<p><spring:message code="noPatientsRegistered" /></p>
 		</c:otherwise>
 	</c:choose>
 	<p><spring:message code="newPatientLabel"/><a href="register"><spring:message code="hereLabel" /></a>.</p>

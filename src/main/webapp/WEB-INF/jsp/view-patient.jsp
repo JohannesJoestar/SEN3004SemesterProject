@@ -47,6 +47,5 @@
 		</tr>
 	</table>
 	<p><a href="/patient/register"><spring:message code="sendNewValues" /></p>
-	<spring:message code="linklabel" var="labelLink" /><spring:message code="linklabel2" var="labelLink2" /><a href="${labelLink2}"><img src="${labelLink}" height="22" ></a>
-</body>
+	</body>
 </html>
