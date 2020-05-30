@@ -24,10 +24,15 @@ public class TIDValidator implements Validator {
     }
     @Override
     public void validate(Object target, Errors errors) {
-        long TID = ((Patient) target).getTID();
+        Patient patient = ((Patient) target);
+        long TID = patient.getTID();
         
         // TID has a unique constraint
-        if (service.patientExistsByTID(TID)){
+        if (
+            // It should only be checked while registering though
+            patient.getID() == 0 && 
+            service.patientExistsByTID(TID)
+        ){
             errors.rejectValue("TID", "TID.custom.exists");
         }
 
