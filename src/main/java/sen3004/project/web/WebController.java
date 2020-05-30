@@ -65,6 +65,7 @@ public class WebController {
     public ModelAndView editPatient(@PathVariable long PID){
         return new ModelAndView("register-patient")
             .addObject("patient", service.getPatientByID(PID))
+            .addObject("pid", String.valueOf(PID))
             .addObject("allSymptoms", service.getAllSymptoms());
     }
   

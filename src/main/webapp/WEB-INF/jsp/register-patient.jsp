@@ -90,7 +90,17 @@
 		</table>
 	</form:form>
 	<p><spring:message code="registerLabel"/><a href="/patient/all"><spring:message code="hereLabel"/></a> .</p>
-	<a href="/patient/register?language=${target_locale}">
+
+	<!-- When editing, changing language should bring back user to the edit URL-->
+	<c:choose>
+		<c:when test="${registering}">
+			<c:set value="register" var="path" />
+		</c:when>
+		<c:otherwise>
+			<c:set value="${pid}/edit" var="path" />
+		</c:otherwise>
+	</c:choose>
+	<a href="/patient/${path}?language=${target_locale}">
 		<img src="/img/icon_${target_locale}.png" height="22" >
 	</a>
 </body>
