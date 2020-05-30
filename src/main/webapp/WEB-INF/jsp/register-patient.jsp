@@ -89,7 +89,7 @@
 			</tr>
 		</table>
 	</form:form>
-	<p><spring:message code="registerLabel"/><a href="/patient/all"><spring:message code="hereLabel"/></a> .</p>
+	<p><spring:message code="registerLabel"/><a href="/patient/all"><spring:message code="hereLabel"/></a>.</p>
 
 	<!-- When editing, changing language should bring back user to the edit URL-->
 	<c:choose>

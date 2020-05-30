@@ -7,7 +7,7 @@
 <head>
 <link href="/css/style.css" rel="stylesheet" type="text/css" />
 <meta charset="UTF-8">
-<title>Result</title>
+<title><spring:message code="resultTitle" /></title>
 </head>
 <body>
 	<h2><spring:message code="registryResultLabel" /></h2>
