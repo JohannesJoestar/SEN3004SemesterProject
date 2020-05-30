@@ -19,7 +19,7 @@
 				<spring:message code="covidPatientRegistryLabel" />
 			</c:when>
 			<c:otherwise>
-				Editing patient
+				<spring:message code="editPatientLabel" />
 			</c:otherwise>
 		</c:choose>
 	</h2>
@@ -27,32 +27,32 @@
 		<form:hidden path="ID" />
 		<table>
 			<tr>
-				<td><spring:message code="TIDLabel" /></td>
+				<td><spring:message code="TIDLabel" />:</td>
 				<td><form:input path="TID" /></td>
 				<td><form:errors path="TID" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><spring:message code="nameLabel" /></td>
+				<td><spring:message code="nameLabel" />:</td>
 				<td><form:input path="name" /></td>
 				<td><form:errors path="name" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><spring:message code="surnameLabel" /></td>
+				<td><spring:message code="surnameLabel" />:</td>
 				<td><form:input path="surname" /></td>
 				<td><form:errors path="surname" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><spring:message code="dateOfBirthLabel" /></td>
+				<td><spring:message code="dateOfBirthLabel" />:</td>
 				<td><form:input path="dateOfBirth" /></td>
 				<td><form:errors path="dateOfBirth" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><spring:message code="dateSymptomLabel" /></td>
+				<td><spring:message code="dateSymptomLabel" />:</td>
 				<td><form:input path="dateOfFirstSymptom" /></td>
 				<td><form:errors path="dateOfFirstSymptom" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><spring:message code="symptomsLabel" /></td>
+				<td><spring:message code="symptomsLabel" />:</td>
 				<td>				
 					<c:forEach items="${allSymptoms}" var="symptom">
 						<form:checkbox path="symptoms" value="${symptom}" />

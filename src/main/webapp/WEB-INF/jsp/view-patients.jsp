@@ -2,27 +2,30 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="javatime" uri="http://sargue.net/jsptags/time" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
 <head>
 <link href="/css/style.css" rel="stylesheet" type="text/css" />
 <meta charset="UTF-8">
-<title>List of patients</title>
+<title><spring:message code="listOfPatientsLabel" /></title>
 </head>
 <body>
-	<h2>List of patients</h2>
+	<h2><spring:message code="listOfPatientsLabel" /></h2>
 	<c:choose>
 		<c:when test="${fn:length(patients) > 0}">	
 			<table class="bordered" border="1">
 				<tr>
                     <th>ID</th>
-                    <th>TID</th>
-					<th>Name</th>
-					<th>Surname</th>
-                    <th>Date of birth</th>
-                    <th>Date of first symptom</th>
-                    <th>Symptoms</th>
+                    <th><spring:message code="TIDLabel" /></th>
+					<th><spring:message code="nameLabel" /></th>
+					<th><spring:message code="surnameLabel" /></th>
+                    <th><spring:message code="dateOfBirthLabel" /></th>
+                    <th><spring:message code="dateSymptomLabel" /></th>
+                    <th><spring:message code="symptomsLabel" /></th>
                     <th></th>
 				</tr>
 				<c:forEach items="${patients}" var="p">
@@ -40,8 +43,8 @@
 								<c:when test="${fn:length(p.symptoms) > 0}">
 									<c:forEach items="${p.symptoms}" var="symptom" varStatus="i">
 										<c:choose>
-											<c:when test="${i.last}">${symptom.name}</c:when>
-											<c:otherwise>${symptom.name},</c:otherwise>
+											<c:when test="${i.last}"><spring:message code="${symptom.name}"/></c:when>
+											<c:otherwise><spring:message code="${symptom.name}"/>,</c:otherwise>
 										</c:choose>
 									</c:forEach>
 								</c:when>
@@ -59,6 +62,9 @@
 			<p>There are no patients registered.</p>
 		</c:otherwise>
 	</c:choose>
-	<p>Register a new patient <a href="/patient/register">here</a>.</p>
+	<p><spring:message code="newPatientLabel"/><a href="register"><spring:message code="hereLabel" /></a>.</p>
+	<p>
+		<spring:message code="linklabel" var="labelLink" /><spring:message code="linklabel2" var="labelLink2" /><a href="${labelLink2}"><img src="${labelLink}" height="22" ></a>
+	</p>
 </body>
 </html>

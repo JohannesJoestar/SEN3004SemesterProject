@@ -10,32 +10,32 @@
 <title>Result</title>
 </head>
 <body>
-	<h2><td><spring:message code="registryResultLabel" /></td></h2>
+	<h2><spring:message code="registryResultLabel" /></h2>
 	<p><spring:message code="resultMessage" /></p>
 	<table>
 		<tr>
-			<td><spring:message code="TIDLabel" /></td>
+			<td><spring:message code="TIDLabel" />:</td>
 			<td>${patient.TID}</td>
 		</tr>
 		<tr>
-			<td><spring:message code="nameLabel" /></td>
+			<td><spring:message code="nameLabel" />:</td>
 			<td>${patient.name}</td>
 		</tr>
 		<tr>
-			<td><spring:message code="surnameLabel" /></td>
+			<td><spring:message code="surnameLabel" />:</td>
 			<td>${patient.surname}</td>
 		</tr>
 		<tr>
-			<td><spring:message code="dateOfBirthLabel" /></td>
+			<td><spring:message code="dateOfBirthLabel" />:</td>
 			<!-- <td><javatime:format value="${patient.dateOfBirth}" pattern="dd-MM-yyyy"/></td> -->
 			<td><javatime:format value="${patient.dateOfBirth}" pattern="dd.MM.yyyy"/></td>
 		</tr>
 		<tr>
-			<td><spring:message code="dateSymptomLabel" /></td>
+			<td><spring:message code="dateSymptomLabel" />:</td>
 			<td><javatime:format value="${patient.dateOfFirstSymptom}" pattern="dd.MM.yyyy"/></td>
 		</tr>		
 		<tr>
-			<td><spring:message code="primarySymptomLabel" /></td>
+			<td><spring:message code="primarySymptomLabel" />:</td>
 			<td>
 				<c:forEach items="${patient.symptoms}" var="symptom" varStatus="ID">
 				<c:choose>
@@ -46,7 +46,7 @@
 		    </td>			
 		</tr>
 	</table>
-	<p><a href="patient/register.html"><spring:message code="sendNewValues" /></a></p>
+	<p><a href="/patient/register"><spring:message code="sendNewValues" /></p>
 	<spring:message code="linklabel" var="labelLink" /><spring:message code="linklabel2" var="labelLink2" /><a href="${labelLink2}"><img src="${labelLink}" height="22" ></a>
 </body>
 </html>
