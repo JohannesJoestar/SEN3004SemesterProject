@@ -69,6 +69,8 @@
 		</c:otherwise>
 	</c:choose>
 	<p><spring:message code="newPatientLabel"/><a href="register"><spring:message code="hereLabel" /></a>.</p>
-	<a href="/patient/all?language=${target_locale}"><img src="/img/icon_${target_locale}.png" height="22" ></a>
+	<a href="/patient/all?language=${target_locale}">
+		<img src="/img/icon_${target_locale}.png" height="22" >
+	</a>
 </body>
 </html>
