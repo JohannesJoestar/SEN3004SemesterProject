@@ -11,6 +11,10 @@
 <head>
 <link href="/css/style.css" rel="stylesheet" type="text/css" />
 <meta charset="UTF-8">
+
+<!-- Decide which language option to show -->
+<c:set value="${pageContext.response.locale == 'tr' ? 'en' : 'tr'}" var="target_locale"/>
+
 <title><spring:message code="listOfPatientsLabel" /></title>
 </head>
 <body>
@@ -65,8 +69,6 @@
 		</c:otherwise>
 	</c:choose>
 	<p><spring:message code="newPatientLabel"/><a href="register"><spring:message code="hereLabel" /></a>.</p>
-	<p>
-		<spring:message code="linklabel" var="labelLink" /><spring:message code="linklabel2" var="labelLink2" /><a href="${labelLink2}"><img src="${labelLink}" height="22" ></a>
-	</p>
+	<a href="/patient/all?language=${target_locale}"><img src="/img/icon_${target_locale}.png" height="22" ></a>
 </body>
 </html>

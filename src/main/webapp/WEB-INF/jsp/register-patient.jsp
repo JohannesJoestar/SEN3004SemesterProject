@@ -12,6 +12,9 @@
 <!-- Differentiate between registering and editing -->
 <c:set var="registering" value="${patient.ID == 0}"/>
 
+<!-- Decide which language option to show -->
+<c:set value="${pageContext.response.locale == 'tr' ? 'en' : 'tr'}" var="target_locale"/>
+
 <title>
 	<c:choose>
 		<c:when test="${registering}">
@@ -87,8 +90,8 @@
 		</table>
 	</form:form>
 	<p><spring:message code="registerLabel"/><a href="/patient/all"><spring:message code="hereLabel"/></a> .</p>
-	<p>
-		<spring:message code="linklabel" var="labelLink" /><spring:message code="linklabel2" var="labelLink2" /><a href="${labelLink2}"><img src="${labelLink}" height="22" ></a>
-	</p>
+	<a href="/patient/register?language=${target_locale}">
+		<img src="/img/icon_${target_locale}.png" height="22" >
+	</a>
 </body>
 </html>
