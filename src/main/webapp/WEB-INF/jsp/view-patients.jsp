@@ -55,9 +55,9 @@
 							</c:choose>
 						</td>
 						<td>
-							<spring:message code="submitButtonLabel" var="lblDelete" />
+							<spring:message code="deleteLabel" var="lblDelete" />
 							<a title="${lblDelete}" href="/patient/${p.ID}/delete/"><img src="/img/delete.png" width="20" /></a>
-							<spring:message code="submitButtonLabel" var="lblEdit" />
+							<spring:message code="editLabel" var="lblEdit" />
 							<a title="${lblEdit}" href="/patient/${p.ID}/edit/"><img src="/img/edit.png" width="20" /></a>
 						</td>
 					</tr>
