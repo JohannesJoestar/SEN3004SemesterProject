@@ -27,7 +27,6 @@
 		</tr>
 		<tr>
 			<td><spring:message code="dateOfBirthLabel" />:</td>
-			<!-- <td><javatime:format value="${patient.dateOfBirth}" pattern="dd-MM-yyyy"/></td> -->
 			<td><javatime:format value="${patient.dateOfBirth}" pattern="dd.MM.yyyy"/></td>
 		</tr>
 		<tr>
