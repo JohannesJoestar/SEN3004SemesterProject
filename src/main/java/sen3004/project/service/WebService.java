@@ -43,9 +43,6 @@ public class WebService {
         repoPatient.deleteById(ID);
     }
     // Service implementation: Symptom
-    public Symptom getSymptomByID(long ID){
-        return repoSymptom.getOne(ID);
-    }
     public List<Symptom> getAllSymptoms(){
         return repoSymptom.findAll();
     }
