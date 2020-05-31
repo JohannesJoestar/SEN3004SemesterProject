@@ -68,7 +68,7 @@
 			<p><spring:message code="noPatientsRegistered" /></p>
 		</c:otherwise>
 	</c:choose>
-	<p><spring:message code="newPatientLabel"/><a href="register"><spring:message code="hereLabel" /></a>.</p>
+	<p><spring:message code="newPatientLabel"/><a href="/patient/register"><spring:message code="hereLabel" /></a>.</p>
 	<a href="/patient/all?language=${target_locale}">
 		<img src="/img/icon_${target_locale}.png" height="22" >
 	</a>
