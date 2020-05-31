@@ -41,32 +41,32 @@
 		<form:hidden path="ID" />
 		<table>
 			<tr>
-				<td><spring:message code="TIDLabel" />:</td>
+				<td><spring:message code="lblTID" />:</td>
 				<td><form:input path="TID" /></td>
 				<td><form:errors path="TID" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><spring:message code="nameLabel" />:</td>
+				<td><spring:message code="lblName" />:</td>
 				<td><form:input path="name" /></td>
 				<td><form:errors path="name" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><spring:message code="surnameLabel" />:</td>
+				<td><spring:message code="lblSurname" />:</td>
 				<td><form:input path="surname" /></td>
 				<td><form:errors path="surname" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><spring:message code="dateOfBirthLabel" />:</td>
+				<td><spring:message code="lblDateOfBirth" />:</td>
 				<td><form:input path="dateOfBirth" /></td>
 				<td><form:errors path="dateOfBirth" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><spring:message code="dateSymptomLabel" />:</td>
+				<td><spring:message code="lblDateSymptom" />:</td>
 				<td><form:input path="dateOfFirstSymptom" /></td>
 				<td><form:errors path="dateOfFirstSymptom" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><spring:message code="symptomsLabel" />:</td>
+				<td><spring:message code="lblSymptoms" />:</td>
 				<td>				
 					<c:forEach items="${allSymptoms}" var="symptom">
 						<form:checkbox path="symptoms" value="${symptom}" />
@@ -77,7 +77,7 @@
 				<td><form:errors path="symptoms" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<spring:message code="submitButtonLabel" var="lblSubmit" />
+				<spring:message code="lblSubmit" var="lblSubmit" />
 				<td>
 					<input type="submit" value="${lblSubmit}" />
 					<c:choose>

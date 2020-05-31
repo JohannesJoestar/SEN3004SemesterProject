@@ -14,27 +14,27 @@
 	<p><spring:message code="resultMessage" /></p>
 	<table>
 		<tr>
-			<td><spring:message code="TIDLabel" />:</td>
+			<td><spring:message code="lblTID" />:</td>
 			<td>${patient.TID}</td>
 		</tr>
 		<tr>
-			<td><spring:message code="nameLabel" />:</td>
+			<td><spring:message code="lblName" />:</td>
 			<td>${patient.name}</td>
 		</tr>
 		<tr>
-			<td><spring:message code="surnameLabel" />:</td>
+			<td><spring:message code="lblSurname" />:</td>
 			<td>${patient.surname}</td>
 		</tr>
 		<tr>
-			<td><spring:message code="dateOfBirthLabel" />:</td>
+			<td><spring:message code="lblDateOfBirth" />:</td>
 			<td><javatime:format value="${patient.dateOfBirth}" pattern="dd.MM.yyyy"/></td>
 		</tr>
 		<tr>
-			<td><spring:message code="dateSymptomLabel" />:</td>
+			<td><spring:message code="lblDateSymptom" />:</td>
 			<td><javatime:format value="${patient.dateOfFirstSymptom}" pattern="dd.MM.yyyy"/></td>
 		</tr>		
 		<tr>
-			<td><spring:message code="primarySymptomLabel" />:</td>
+			<td><spring:message code="lblSymptoms" />:</td>
 			<td>
 				<c:forEach items="${patient.symptoms}" var="symptom" varStatus="ID">
 				<c:choose>
