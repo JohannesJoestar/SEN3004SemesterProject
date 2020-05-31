@@ -21,7 +21,7 @@
 			<spring:message code="covidPatientRegistryLabel" />
 		</c:when>
 		<c:otherwise>
-			Editing patient
+			<spring:message code="editPatientLabel" />
 		</c:otherwise>
 	</c:choose>
 </title>
