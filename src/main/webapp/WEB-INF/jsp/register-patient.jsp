@@ -13,7 +13,7 @@
 <c:set var="registering" value="${patient.ID == 0}"/>
 
 <!-- Decide which language option to show -->
-<c:set value="${pageContext.response.locale == 'tr' ? 'en' : 'tr'}" var="target_locale"/>
+<c:set value="${pageContext.response.locale == 'tr' || pageContext.response.locale == 'tr_TR' ? 'en' : 'tr'}" var="target_locale"/>
 
 <title>
 	<c:choose>
