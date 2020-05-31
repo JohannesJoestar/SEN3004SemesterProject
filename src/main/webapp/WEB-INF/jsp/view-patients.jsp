@@ -24,12 +24,12 @@
 			<table class="bordered" border="1">
 				<tr>
                     <th>ID</th>
-                    <th><spring:message code="TIDLabel" /></th>
-					<th><spring:message code="nameLabel" /></th>
-					<th><spring:message code="surnameLabel" /></th>
-                    <th><spring:message code="dateOfBirthLabel" /></th>
-                    <th><spring:message code="dateSymptomLabel" /></th>
-                    <th><spring:message code="symptomsLabel" /></th>
+                    <th><spring:message code="lblTID" /></th>
+					<th><spring:message code="lblName" /></th>
+					<th><spring:message code="lblSurname" /></th>
+                    <th><spring:message code="lblDateOfBirth" /></th>
+                    <th><spring:message code="lblDateSymptom" /></th>
+                    <th><spring:message code="lblSymptoms" /></th>
                     <th></th>
 				</tr>
 				<c:forEach items="${patients}" var="p">
